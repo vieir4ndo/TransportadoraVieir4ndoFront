@@ -3,16 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from '../models/user';
+import { environment } from 'src/environments/environment';
+
+const API_URL = environment.apiUrl;
+const AVATAR_URL = environment.avatarUrl;
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  authUrl = "http://localhost:5000/api/auth/";
-  usersUrl = "http://localhost:5000/api/users/";
-  confirmEmailUrl = "http://localhost:4200/confirm-email";
-  changePasswordUrl = "http://localhost:4200/change-password";
-  avatarUrl = "https://ui-avatars.com/api/";
+  authUrl: string = `${API_URL}/auth`;
+  usersUrl : string = `${API_URL}/users`;
 
   helper = new JwtHelperService();
   decodedToken: any;
@@ -64,7 +65,7 @@ export class AuthService {
 
   validateAvatar() : void{
     if (this.currentUser!.profileImageUrl == null){
-      this.currentUser!.profileImageUrl = this.avatarUrl + this.currentUser!.username;
+      this.currentUser!.profileImageUrl = AVATAR_URL + this.currentUser!.username;
     }
   }
 }

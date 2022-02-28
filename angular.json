@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -32,9 +35,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "../TV-SPA/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
-              "../TV-SPA/node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
-              "../TV-SPA/node_modules/@fortawesome/fontawesome-free/scss/solid.scss"
+              "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/solid.scss"
             ],
             "scripts": []
           },
